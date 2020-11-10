@@ -1,0 +1,55 @@
+{
+	"info": {
+		"_postman_id": "0d6b2366-72a7-4654-b06c-09b3c884606c",
+		"name": "productsapp-automation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Products",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "05e3b43f-767d-4ef1-a3c0-9ddaa9d415b4",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"pm.test(\"value of [0].Id to be 1\", function(){ pm.expect(1).to.equal(jsonData[0].Id)\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:49794/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49794",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2nd Endpoint",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
